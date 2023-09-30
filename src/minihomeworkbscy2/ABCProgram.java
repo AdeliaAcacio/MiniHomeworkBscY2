@@ -22,21 +22,29 @@ public class ABCProgram {
        System.out.println("          (This program will check if you are awesome enough to join our club)\n " );
        
         String userName; //To store user name
-        int userAnswer1, userAnswer2;
+        int userAnswer1, userAnswer2; //To store user answers
+        
+        
+            
         
         Scanner myKB = new Scanner(System.in); //Prompt
         
         System.out.println("What is your name?"); //Output to screen
         userName = myKB.nextLine(); //Read from the screen and store in userName
         
+        try{
         //Converting user name characters to upper case using .toUpperCase()
-        System.out.println("\n               *** HELLO, " + userName +  "***\n Let's see how awesome you really are!"); //Output to screen
-        System.out.println("\n How many books have you read last year? Numbers only");//possible error  - catch the error
-        userAnswer1 = myKB.nextInt();
+        System.out.println("\n               *** HELLO, " + userName.toUpperCase() +  "***\n Let's see how awesome you really are!"); //Output to screen
+        System.out.println("\nHow many books have you read last year? Numbers only");//possible error  - catch the error
+        userAnswer1 = myKB.nextInt(); //Reads the integer from the screen and store in userAnswer1
         
-        System.out.println("How many books have you read this year?");
-        userAnswer2 = myKB.nextInt();
-        
+        System.out.println("How many books have you read this year? Numbers only");
+        userAnswer2 = myKB.nextInt();//Reads the integer from the screen and store in userAnswer1
+       
+        //To catch if the user type letters instead numbers
+        }catch(Exception e){
+            System.out.println("Error - You need to enter a number!");
+        }
     }
     
 }
